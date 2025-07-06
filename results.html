@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ваши результаты | Навигатор мер поддержки</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-container">
+            <!-- Основной логотип -->
+            <a href="index.html" class="logo">
+                <img src="images/logo.svg" alt="Логотип проекта" class="logo-sign">
+                <div class="logo-text">
+                    <span>Государство</span>
+                    <span>для людей</span>
+                </div>
+            </a>
+    
+            <!-- Вертикальный разделитель из гайдлайна -->
+            <div class="header-separator"></div>
+    
+            <!-- Логотип партнера: Правительство Марий Эл -->
+            <div class="partner-logo">
+                <!-- ССЫЛКА НА ВАШ ФАЙЛ С ГЕРБОМ -->
+                <img src="images/gerb.svg" alt="Герб Республики Марий Эл" class="partner-coat-of-arms">
+                <div class="partner-text">
+                    <span>Правительство</span>
+                    <span>Республики Марий Эл</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="results-main">
+        <div class="container">
+            <div class="results-header">
+                <h1 id="resultsTitle">Ваш персональный список мер поддержки</h1>
+                <p id="resultsSubtitle">На основе ваших ответов, вам и вашей семье могут быть доступны:</p>
+                <button class="cta-button" id="downloadPdf">Скачать в PDF</button>
+            </div>
+
+            <div class="results-grid" id="resultsGrid">
+                 <div class="placeholder">Анализируем ваши ответы...</div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>

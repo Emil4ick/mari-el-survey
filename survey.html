@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анкета | Навигатор мер поддержки</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-container">
+            <!-- Основной логотип -->
+            <a href="index.html" class="logo">
+                <img src="images/logo.svg" alt="Логотип проекта" class="logo-sign">
+                <div class="logo-text">
+                    <span>Государство</span>
+                    <span>для людей</span>
+                </div>
+            </a>
+    
+            <!-- Вертикальный разделитель из гайдлайна -->
+            <div class="header-separator"></div>
+    
+            <!-- Логотип партнера: Правительство Марий Эл -->
+            <div class="partner-logo">
+                <!-- ССЫЛКА НА ВАШ ФАЙЛ С ГЕРБОМ -->
+                <img src="images/gerb.svg" alt="Герб Республики Марий Эл" class="partner-coat-of-arms">
+                <div class="partner-text">
+                    <span>Правительство</span>
+                    <span>Республики Марий Эл</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="survey-main">
+        <div class="survey-container">
+            <!-- Прогресс-бар -->
+            <div class="progress-bar">
+                <div class="progress-bar-fill" id="progressBar"></div>
+            </div>
+            <div class="progress-text" id="progressText">Шаг 1 из 5</div>
+
+            <!-- Карточка с вопросом -->
+            <div class="question-card" id="questionCard">
+                <h2 class="question-title" id="questionTitle">Загрузка вопроса...</h2>
+                <div class="answers-container" id="answersContainer">
+                    <!-- Кнопки с ответами будут вставляться сюда из JavaScript -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Подключаем скрипт в самом конце -->
+    <script src="js/script.js"></script>
+</body>
+</html>

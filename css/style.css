@@ -1,0 +1,153 @@
+/* --- Подключение шрифтов и базовые стили --- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+:root {
+    --color-blue-dark: #004E8B;
+    --color-blue-medium: #0082A0;
+    --color-aquamarine: #31B6B3;
+    --color-white: #FFFFFF;
+    --color-black: #000000;
+    --color-gray-text: #5C5F67;
+    --color-bg-light: #f8f9fa;
+    --font-main: 'Montserrat', Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-main);
+    background-color: var(--color-white);
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Шапка --- */
+.header { padding: 20px 0; border-bottom: 1px solid #e9ecef; background-color: var(--color-white); }
+.header-container { display: flex; align-items: center; }
+.logo { display: flex; align-items: center; text-decoration: none; gap: 15px; }
+.logo-sign { height: 42px; }
+.logo-text { font-size: 16px; line-height: 1.2; font-weight: 700; color: var(--color-black); }
+.logo-text span { display: block; }
+.header-separator { width: 1px; height: 40px; background-color: #dee2e6; margin: 0 24px; }
+.partner-logo { display: flex; align-items: center; gap: 12px; }
+.partner-coat-of-arms { height: 42px; width: auto; }
+.partner-text { font-size: 13px; line-height: 1.3; font-weight: 500; color: var(--color-gray-text); }
+.partner-text span { display: block; }
+
+/* --- Hero блок с иллюстрацией --- */
+.hero { background-color: var(--color-blue-dark); color: var(--color-white); padding: 80px 0; position: relative; overflow: hidden; }
+.hero::after { content: ''; position: absolute; width: 600px; height: 600px; background-color: var(--color-aquamarine); border-radius: 50%; top: -150px; right: -140px; opacity: 0.15; z-index: 1; }
+.hero-container { position: relative; z-index: 2; }
+.hero-content { max-width: 55%; }
+.hero h1 { font-size: 42px; font-weight: 700; line-height: 1.25; margin: 0 0 20px 0; }
+.hero p { font-size: 18px; line-height: 1.6; margin-bottom: 40px; }
+.cta-button { background-color: var(--color-white); color: var(--color-blue-dark); border: 2px solid var(--color-blue-dark); border-radius: 8px; padding: 18px 35px; font-size: 18px; font-weight: 700; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.3s; }
+.cta-button:hover { background-color: var(--color-blue-dark); color: var(--color-white); transform: translateY(-2px); }
+.hero-illustration { position: absolute; width: 600px; right: -45%; top: -15%; bottom: 20px; z-index: 2; pointer-events: none; }
+.hero-illustration img { width: 100%; height: auto; }
+
+/* --- Секция "Какие меры" --- */
+.info-section { padding: 80px 0; }
+.section-title { text-align: center; font-size: 36px; margin-top: 0; margin-bottom: 60px; color: var(--color-blue-dark); }
+
+/* === ГЛАВНЫЕ ИЗМЕНЕНИЯ ЗДЕСЬ === */
+.categories-grid {
+    display: flex; /* Вместо grid используем flex для выравнивания */
+    flex-wrap: wrap; /* Разрешаем перенос на новую строку */
+    gap: 30px;
+    align-items: stretch; /* Заставляем все карточки в ряду растягиваться на одну высоту */
+}
+.category-card {
+    flex: 1; /* Каждая карточка будет занимать равное пространство */
+    min-width: 280px; /* Минимальная ширина, после которой произойдет перенос */
+    text-align: center;
+    display: flex; /* Включаем flex для содержимого самой карточки */
+    flex-direction: column; /* Располагаем элементы друг под другом */
+    align-items: center; /* Центрируем по горизонтали */
+}
+.category-card h3 {
+    font-size: 22px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+.category-card p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--color-gray-text);
+    margin-top: auto; /* Это "прижмет" текст к низу, если он короче других */
+}
+.category-icon {
+    height: 75px;
+    width: 75px;
+    margin-bottom: 25px;
+}
+
+/* --- Секция FAQ --- */
+.faq-section { background-color: var(--color-bg-light); }
+.faq-container { max-width: 800px; margin: 0 auto; }
+.faq-item { border-bottom: 1px solid #dee2e6; }
+.faq-item summary { font-size: 18px; font-weight: 500; padding: 20px 0; cursor: pointer; list-style: none; position: relative; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: '+'; position: absolute; right: 10px; font-size: 24px; color: var(--color-aquamarine); transition: transform 0.2s; }
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-item p { font-size: 16px; line-height: 1.6; color: var(--color-gray-text); padding: 0 10px 20px 10px; margin: 0; }
+
+/* --- Подвал --- */
+.footer { padding: 40px 0; background-color: var(--color-bg-light); margin-top: auto; }
+.footer .container { text-align: center; font-size: 14px; color: var(--color-gray-text); }
+
+/* --- Стили для страницы анкеты (survey.html) --- */
+.survey-main { background-color: var(--color-bg-light); flex-grow: 1; display: flex; align-items: center; justify-content: center; padding: 40px 20px; }
+.survey-container { width: 100%; max-width: 700px; }
+.progress-bar { width: 100%; height: 8px; background-color: #dee2e6; border-radius: 4px; overflow: hidden; margin-bottom: 10px; }
+.progress-bar-fill { height: 100%; background-color: var(--color-aquamarine); width: 0%; transition: width 0.4s ease-in-out; }
+.progress-text { text-align: right; font-size: 14px; color: var(--color-gray-text); margin-bottom: 30px; }
+.question-card { background-color: var(--color-white); border-radius: 16px; padding: 40px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08); }
+.question-title { font-size: 28px; font-weight: 700; text-align: center; margin-top: 0; margin-bottom: 40px; color: var(--color-blue-dark); }
+.answers-container { display: grid; gap: 15px; }
+.answer-button { width: 100%; background-color: var(--color-white); border: 2px solid #ced4da; border-radius: 12px; padding: 20px; font-size: 18px; font-family: var(--font-main); font-weight: 500; text-align: left; cursor: pointer; transition: all 0.2s; }
+.answer-button:hover { border-color: var(--color-aquamarine); background-color: #f0f9f8; }
+.answer-button:focus { outline: none; box-shadow: 0 0 0 3px rgba(49, 182, 179, 0.4); }
+
+/* --- Стили для страницы результатов (results.html) --- */
+.results-main { padding: 60px 0; }
+.results-header { text-align: center; margin-bottom: 60px; }
+.results-header h1 { font-size: 36px; color: var(--color-blue-dark); margin-bottom: 10px; }
+.results-header p { font-size: 18px; color: var(--color-gray-text); margin-bottom: 30px; }
+.results-grid { display: grid; gap: 30px; }
+.result-card { background-color: var(--color-white); border: 1px solid #e9ecef; border-radius: 16px; padding: 30px; box-shadow: 0 4px 16px rgba(0,0,0,0.05); }
+.result-card h3 { font-size: 22px; color: var(--color-blue-dark); margin-top: 0; margin-bottom: 15px; }
+.result-card p { margin-top: 0; margin-bottom: 20px; line-height: 1.6; }
+.result-card-footer { border-top: 1px solid #e9ecef; padding-top: 20px; }
+.result-card-footer strong { font-size: 16px; color: var(--color-black); }
+.result-card-footer ul { padding-left: 20px; margin: 10px 0 0 0; color: var(--color-gray-text); }
+.placeholder { text-align: center; font-size: 18px; color: var(--color-gray-text); padding: 50px; }
+
+/* --- Медиа-запросы для адаптивности --- */
+@media (max-width: 1024px) {
+    .header-separator, .partner-logo { display: none; }
+    .hero-content { max-width: 100%; text-align: center; }
+    .hero-illustration { display: none; }
+    .hero h1 { font-size: 36px; }
+}
+
+/* АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ */
+@media (max-width: 767px) {
+    .categories-grid {
+        flex-direction: column; /* Карточки встают в один столбец */
+    }
+    .question-title {
+        font-size: 24px;
+    }
+    .answer-button {
+        padding: 15px;
+        font-size: 16px;
+    }
+}
